@@ -3,54 +3,97 @@
 <head>
     <title>Arulmurugan K - Tech Blog</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
             line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
         }
-        h1 { color: #333; border-bottom: 2px solid #333; padding-bottom: 10px; }
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        .header p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
         .post {
-            border: 1px solid #ddd;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 5px;
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .post h2 { color: #0066cc; margin-top: 0; }
+        .post h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .post-meta {
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
         .btn {
             display: inline-block;
-            background: #0066cc;
+            background: #3498db;
             color: white;
-            padding: 10px 20px;
+            padding: 10px 25px;
             text-decoration: none;
             border-radius: 5px;
+            margin-top: 15px;
         }
-        .btn:hover { background: #0052a3; }
+        .btn:hover {
+            background: #2980b9;
+        }
         .footer {
+            background: #34495e;
+            color: white;
             text-align: center;
-            margin-top: 50px;
-            padding: 20px;
-            color: #666;
-            border-top: 1px solid #ddd;
+            padding: 30px;
+            margin-top: 40px;
+        }
+        .copyright {
+            margin-top: 20px;
+            font-size: 14px;
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
-    <h1>👨‍💻 Arulmurugan K's Tech Blog</h1>
-
- {% for post in site.posts %}
-<div class="post">
-    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-    <p>{{ post.date | date: "%B %d, %Y" }} | By {{ post.author | default: site.author }}</p>
-    <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-    <a href="{{ post.url }}">Read More →</a>
-</div>
-{% endfor %}
+    <div class="header">
+        <h1>👨‍💻 Arulmurugan K</h1>
+        <p>C++ Developer | Windows Programming | Cloud Enthusiast</p>
+    </div>
+    
+    <div class="container">
+        <!-- This is where your blog posts will appear -->
+        <div class="post">
+            <h2>Microsoft Graph Email Sender with OAuth 2.0</h2>
+            <div class="post-meta">Published: February 28, 2024 | By Arulmurugan K</div>
+            <p>A complete C++ implementation for sending emails with attachments via Microsoft Graph API. Features OAuth 2.0 authentication, smart attachment handling for files up to 150MB, and Visual Studio 2008 compatibility.</p>
+            <a href="post1.html" class="btn">Read Full Article →</a>
+        </div>
+    </div>
     
     <div class="footer">
         <p>© 2024 Arulmurugan K. All Rights Reserved.</p>
-        <p>Made with ❤️ in India</p>
+        <p class="copyright">Made with ❤️ in India</p>
     </div>
 </body>
 </html>
