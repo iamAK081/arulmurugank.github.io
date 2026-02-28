@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Microsoft Graph Email Sender - Arulmurugan K</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #2c3e50;
+            margin: 30px 0 15px 0;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h3 {
+            color: #34495e;
+            margin: 20px 0 10px 0;
+        }
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 5px;
+            font-weight: bold;
+        }
+        .btn-download {
+            background: #27ae60;
+        }
+        .btn-github {
+            background: #34495e;
+        }
+        .btn:hover {
+            opacity: 0.9;
+        }
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: #34495e;
+            color: white;
+            margin-top: 40px;
+        }
+        .back-link {
+            color: white;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .info-box {
+            background: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background: #3498db;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📧 Microsoft Graph Email Sender with OAuth 2.0</h1>
+        <p>By Arulmurugan K | February 28, 2024</p>
+    </div>
+    
+    <div class="container">
+        
+        <!-- Copyright Notice -->
+        <div style="text-align: center; margin-bottom: 30px;">
+            <p><strong>Copyright © 2024 Arulmurugan K. All Rights Reserved.</strong></p>
+        </div>
+        
+        <!-- Download Buttons -->
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="#" class="btn btn-download">📥 Download Source Code</a>
+            <a href="#" class="btn btn-github">💻 View on GitHub</a>
+        </div>
+        
+        <!-- Overview -->
+        <h2>📋 Overview</h2>
+        <p>Microsoft Graph Email Sender is a powerful C++ application that enables seamless email sending with attachments through Microsoft Graph API. The application implements OAuth 2.0 authentication and intelligently handles files of all sizes - from tiny text files to large attachments up to 150MB.</p>
+        
+        <!-- Features -->
+        <h2>✨ Features</h2>
+        <table>
+            <tr>
+                <th>Feature</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>🔐 OAuth 2.0</td>
+                <td>Secure authentication with Azure AD</td>
+            </tr>
+            <tr>
+                <td>🔄 Auto Token Refresh</td>
+                <td>Never worry about expired tokens</td>
+            </tr>
+            <tr>
+                <td>📎 Smart Attachments</td>
+                <td>Files ≤3MB direct, >3MB chunked upload</td>
+            </tr>
+            <tr>
+                <td>📦 Multiple Files</td>
+                <td>Send unlimited attachments</td>
+            </tr>
+            <tr>
+                <td>🔧 VS 2008</td>
+                <td>Pure Win32 API, no dependencies</td>
+            </tr>
+        </table>
+        
+        <!-- Prerequisites -->
+        <h2>📋 Prerequisites</h2>
+        <ul>
+            <li>Visual Studio 2008 or later</li>
+            <li>Windows SDK</li>
+            <li>Azure AD account with Mail.Send permission</li>
+        </ul>
+        
+        <!-- Quick Setup -->
+        <h2>🔧 Quick Setup</h2>
+        <ol>
+            <li>Register app in Azure AD</li>
+            <li>Add Mail.Send permission</li>
+            <li>Create client secret</li>
+            <li>Update credentials in main()</li>
+            <li>Build and run</li>
+        </ol>
+        
+        <!-- Code Preview -->
+        <h2>📝 Source Code Preview</h2>
+        <div class="code-block">
+/*****************************************************************************<br>
+* MICROSOFT GRAPH EMAIL SENDER<br>
+* Copyright (c) 2024 Arulmurugan K<br>
+* All Rights Reserved.<br>
+*****************************************************************************/<br><br>
+#include &lt;windows.h&gt;<br>
+#include &lt;winhttp.h&gt;<br>
+#include &lt;string&gt;<br>
+#include &lt;vector&gt;<br><br>
+// Full source code available for download
+        </div>
+        
+        <!-- License -->
+        <h2>📄 License</h2>
+        <p>MIT License - Copyright (c) 2024 Arulmurugan K</p>
+        
+        <!-- Back to Home -->
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="index.html" class="btn">← Back to Home</a>
+        </div>
+        
+    </div>
+    
+    <div class="footer">
+        <p>© 2024 Arulmurugan K. All Rights Reserved.</p>
+        <p>Made with ❤️ in India</p>
+        <a href="index.html" class="back-link">Back to Home</a>
+    </div>
+</body>
+</html>
