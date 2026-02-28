@@ -38,6 +38,10 @@
             border-bottom: 2px solid #3498db;
             padding-bottom: 10px;
         }
+        h3 {
+            color: #34495e;
+            margin: 20px 0 10px 0;
+        }
         .btn {
             display: inline-block;
             background: #3498db;
@@ -49,6 +53,18 @@
         }
         .btn:hover {
             background: #2980b9;
+        }
+        .btn-download {
+            background: #27ae60;
+        }
+        .btn-download:hover {
+            background: #219a52;
+        }
+        .btn-github {
+            background: #34495e;
+        }
+        .btn-github:hover {
+            background: #2c3e50;
         }
         .footer {
             background: #34495e;
@@ -74,12 +90,55 @@
             border-radius: 5px;
             border-left: 4px solid #3498db;
         }
+        .download-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+        }
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        .badge {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+            margin: 2px;
+        }
     </style>
 </head>
 <body>
     <div class="header">
         <h1>📧 Microsoft Graph Email Sender with OAuth 2.0</h1>
         <p>By Arulmurugan K | February 28, 2024</p>
+        <p>
+            <span class="badge">Version 1.0.2</span>
+            <span class="badge">C++</span>
+            <span class="badge">Windows</span>
+            <span class="badge">VS 2008</span>
+        </p>
     </div>
     
     <div class="container">
@@ -87,43 +146,195 @@
         <!-- COPYRIGHT NOTICE -->
         <div class="copyright-box">
             <p><strong>Copyright © 2024 Arulmurugan K. All Rights Reserved.</strong></p>
+            <p>This software is the original work of Arulmurugan K. Unauthorized reproduction or distribution is prohibited.</p>
+        </div>
+        
+        <!-- DOWNLOAD SECTION - WITH WORKING LINKS -->
+        <div class="download-section">
+            
+            <h3 style="color: #2c3e50; margin-bottom: 20px;">📥 Download Source Code</h3>
+            
+            <!-- Download Button - Direct Download -->
+            <a href="https://raw.githubusercontent.com/iamAK081/iamAK081.github.io/main/GraphEmailSender.cpp" 
+               download="GraphEmailSender.cpp"
+               class="btn btn-download" 
+               style="padding: 15px 40px; font-size: 18px; font-weight: bold; margin: 10px;">
+               ⬇️ DOWNLOAD GraphEmailSender.cpp (650+ lines)
+            </a>
+            
+            <!-- View on GitHub Button -->
+            <a href="https://github.com/iamAK081/iamAK081.github.io/blob/main/GraphEmailSender.cpp" 
+               target="_blank"
+               class="btn btn-github"
+               style="padding: 15px 40px; font-size: 18px; font-weight: bold; margin: 10px;">
+               💻 VIEW ON GITHUB
+            </a>
+            
+            <!-- File Information -->
+            <div style="margin-top: 25px; padding: 15px; background: white; border-radius: 5px;">
+                <p style="margin: 5px 0;"><strong>📁 File:</strong> GraphEmailSender.cpp</p>
+                <p style="margin: 5px 0;"><strong>📦 Size:</strong> ~650 lines of code</p>
+                <p style="margin: 5px 0;"><strong>🔧 Language:</strong> C++ (Visual Studio 2008)</p>
+                <p style="margin: 5px 0;"><strong>📜 License:</strong> MIT License</p>
+                <p style="margin: 5px 0;"><strong>📅 Last Updated:</strong> February 2024</p>
+            </div>
+            
+            <!-- Quick Status -->
+            <div style="margin-top: 15px; color: #27ae60;">
+                <p>✅ File is ready for download</p>
+                <p style="font-size: 12px;">If download doesn't start, right-click and select "Save link as..."</p>
+            </div>
         </div>
         
         <!-- INTRODUCTION -->
         <h2>📋 Introduction</h2>
-        <p>Microsoft Graph Email Sender is a powerful C++ application that enables seamless email sending with attachments through Microsoft Graph API. The application implements OAuth 2.0 authentication and intelligently handles files of all sizes - from tiny text files to large attachments up to 150MB.</p>
+        <p>Microsoft Graph Email Sender is a powerful C++ application developed by <strong>Arulmurugan K</strong> that enables seamless email sending with attachments through Microsoft Graph API. The application implements OAuth 2.0 authentication and intelligently handles files of all sizes - from tiny text files to large attachments up to 150MB.</p>
+        
+        <div style="background: #e8f4f8; padding: 15px; border-radius: 5px; margin: 20px 0;">
+            <p><strong>🎯 Perfect For:</strong></p>
+            <ul>
+                <li>Enterprise automation systems</li>
+                <li>Automated reporting tools</li>
+                <li>Backup notification systems</li>
+                <li>Batch email processing</li>
+            </ul>
+        </div>
         
         <!-- FEATURES -->
         <h2>✨ Key Features</h2>
-        <ul>
+        <ul class="feature-list">
             <li><strong>🔐 OAuth 2.0 Authentication</strong> - Secure client credentials flow with Azure AD</li>
-            <li><strong>🔄 Automatic Token Management</strong> - Token caching and auto-refresh</li>
-            <li><strong>📎 Smart Attachment Handling</strong> - Files ≤3MB direct upload, >3MB chunked upload</li>
+            <li><strong>🔄 Automatic Token Management</strong> - Token caching and auto-refresh 5 minutes before expiry</li>
+            <li><strong>📎 Smart Attachment Handling</strong> - Files ≤3MB direct upload (Base64), >3MB chunked upload (5MB chunks)</li>
             <li><strong>📦 Multiple File Support</strong> - Send unlimited attachments per email</li>
-            <li><strong>🔧 Visual Studio 2008 Compatible</strong> - Pure Win32 API, no dependencies</li>
+            <li><strong>🔧 Visual Studio 2008 Compatible</strong> - Pure Win32 API, no MFC/ATL dependencies</li>
+            <li><strong>⚡ High Performance</strong> - Native code with efficient memory management</li>
+            <li><strong>📝 MIME Type Detection</strong> - Automatic content-type identification</li>
+            <li><strong>🛡️ Error Recovery</strong> - Comprehensive error handling with retry logic</li>
         </ul>
         
+        <!-- PREREQUISITES -->
+        <h2>📋 Prerequisites</h2>
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+            <tr style="background: #3498db; color: white;">
+                <th style="padding: 12px; text-align: left;">Requirement</th>
+                <th style="padding: 12px; text-align: left;">Details</th>
+            </tr>
+            <tr style="background: #f8f9fa;">
+                <td style="padding: 12px; border: 1px solid #ddd;"><strong>Visual Studio</strong></td>
+                <td style="padding: 12px; border: 1px solid #ddd;">2008 or later</td>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid #ddd;"><strong>Windows</strong></td>
+                <td style="padding: 12px; border: 1px solid #ddd;">XP/Vista/7/8/10/11</td>
+            </tr>
+            <tr style="background: #f8f9fa;">
+                <td style="padding: 12px; border: 1px solid #ddd;"><strong>Libraries</strong></td>
+                <td style="padding: 12px; border: 1px solid #ddd;">WinHTTP.lib, Crypt32.lib</td>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid #ddd;"><strong>Azure Account</strong></td>
+                <td style="padding: 12px; border: 1px solid #ddd;">Required for OAuth 2.0</td>
+            </tr>
+        </table>
+        
+        <!-- AZURE SETUP -->
+        <h2>🔑 Azure AD Setup</h2>
+        <ol style="margin-left: 20px;">
+            <li><strong>Register Application</strong> - Go to Azure Portal → App registrations → New registration</li>
+            <li><strong>Add Permissions</strong> - Add Microsoft Graph → Application permissions → Mail.Send</li>
+            <li><strong>Create Secret</strong> - Certificates & secrets → New client secret</li>
+            <li><strong>Copy Values</strong> - Save Client ID, Tenant ID, and Client Secret</li>
+        </ol>
+        
         <!-- CODE PREVIEW -->
-        <h2>📝 Source Code</h2>
-        <pre style="background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 8px; overflow-x: auto;">
-/*****************************************************************************
-* MICROSOFT GRAPH EMAIL SENDER
-* 
-* Copyright (c) 2024 Arulmurugan K
-* All Rights Reserved.
-*
-* Author: Arulmurugan K
-* Version: 1.0.2
-*****************************************************************************/
-
-#include &lt;windows.h&gt;
-#include &lt;winhttp.h&gt;
-#include &lt;stdio.h&gt;
-#include &lt;string&gt;
-#include &lt;vector&gt;
-
-// ... (full source code available in repository)
-        </pre>
+        <h2>📝 Source Code Preview</h2>
+        <div class="code-block">
+/*****************************************************************************<br>
+* MICROSOFT GRAPH EMAIL SENDER<br>
+* <br>
+* Copyright (c) 2024 Arulmurugan K<br>
+* All Rights Reserved.<br>
+*<br>
+* Author: Arulmurugan K<br>
+* Version: 1.0.2<br>
+* Date: February 2024<br>
+* Platform: Windows (Visual Studio 2008)<br>
+*****************************************************************************/<br><br>
+#include &lt;windows.h&gt;<br>
+#include &lt;winhttp.h&gt;<br>
+#include &lt;stdio.h&gt;<br>
+#include &lt;string&gt;<br>
+#include &lt;vector&gt;<br>
+#include &lt;algorithm&gt;<br>
+#include &lt;ctime&gt;<br><br>
+#pragma comment(lib, "winhttp.lib")<br>
+#pragma comment(lib, "crypt32.lib")<br><br>
+// Constants<br>
+#define CHUNK_SIZE (5 * 1024 * 1024) // 5MB chunks<br>
+#define MAX_SMALL_FILE_SIZE (3 * 1024 * 1024) // 3MB limit<br><br>
+<span style="color: #6a9955;">// ... (full source code available for download above) ...</span>
+        </div>
+        
+        <!-- USAGE EXAMPLE -->
+        <h2>🚀 Usage Example</h2>
+        <div class="code-block">
+// Configure your credentials<br>
+std::wstring clientId = L"your-client-id";<br>
+std::wstring clientSecret = L"your-client-secret";<br>
+std::wstring tenantId = L"your-tenant-id";<br>
+std::wstring userId = L"your-email@company.com";<br><br>
+// Create attachments list<br>
+std::vector&lt;std::wstring&gt; attachments;<br>
+attachments.push_back(L"C:\\reports\\document.pdf");<br>
+attachments.push_back(L"C:\\backups\\data.zip");<br><br>
+// Send email<br>
+EmailSender sender(clientId, clientSecret, tenantId, userId);<br>
+sender.SendEmail(L"recipient@company.com", <br>
+                 L"Test Subject", <br>
+                 L"Email body", <br>
+                 attachments);
+        </div>
+        
+        <!-- TROUBLESHOOTING -->
+        <h2>❓ Common Issues</h2>
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+            <tr style="background: #3498db; color: white;">
+                <th style="padding: 12px;">Error</th>
+                <th style="padding: 12px;">Solution</th>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid #ddd;">401 Unauthorized</td>
+                <td style="padding: 12px; border: 1px solid #ddd;">Check client secret, token expired</td>
+            </tr>
+            <tr style="background: #f8f9fa;">
+                <td style="padding: 12px; border: 1px solid #ddd;">403 Forbidden</td>
+                <td style="padding: 12px; border: 1px solid #ddd;">Verify Mail.Send permission granted</td>
+            </tr>
+            <tr>
+                <td style="padding: 12px; border: 1px solid #ddd;">File not found</td>
+                <td style="padding: 12px; border: 1px solid #ddd;">Check file path exists</td>
+            </tr>
+        </table>
+        
+        <!-- LICENSE -->
+        <h2>📄 License</h2>
+        <div style="background: #f8f9fa; padding: 20px; border-radius: 5px;">
+            <p><strong>MIT License</strong></p>
+            <p>Copyright (c) 2024 Arulmurugan K</p>
+            <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+            <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+        </div>
+        
+        <!-- DOWNLOAD AGAIN AT BOTTOM -->
+        <div style="text-align: center; margin: 40px 0;">
+            <a href="https://raw.githubusercontent.com/iamAK081/iamAK081.github.io/main/GraphEmailSender.cpp" 
+               download="GraphEmailSender.cpp"
+               class="btn btn-download"
+               style="padding: 12px 30px;">
+               ⬇️ Download Source Code Again
+            </a>
+        </div>
         
         <!-- BACK TO HOME -->
         <div style="text-align: center; margin-top: 40px;">
@@ -135,6 +346,9 @@
     <div class="footer">
         <p>© 2024 Arulmurugan K. All Rights Reserved.</p>
         <p>Made with ❤️ in India</p>
+        <p style="margin-top: 10px; font-size: 14px; opacity: 0.8;">
+            This software is the original work of Arulmurugan K. Unauthorized reproduction prohibited.
+        </p>
         <a href="index.html" class="back-link">Back to Home</a>
     </div>
 </body>
