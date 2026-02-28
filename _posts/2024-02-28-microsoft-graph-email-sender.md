@@ -97,6 +97,7 @@ While working on enterprise automation systems, I needed a reliable way to send 
 ## 🏗 Architecture
 
 ### File Size Handling Logic
+
 File Attachment
 │
 ▼
@@ -121,9 +122,6 @@ File Attachment
 │ Upload in │
 │ 5MB Chunks │
 └────────────────┘
-
-
----
 
 ## 🔧 Installation
 
