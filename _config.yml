@@ -1,0 +1,23 @@
+title: "Arulmurugan K's Tech Blog"
+author: "Arulmurugan K"
+email: "your-email@example.com"
+description: "C++ programming, Microsoft Graph API, and Windows development"
+baseurl: ""
+url: "https://arulmurugank.github.io"
+twitter_username: your_twitter
+github_username: arulmurugank
+
+# Build settings
+markdown: kramdown
+theme: jekyll-theme-cayman
+plugins:
+  - jekyll-feed
+
+# Show future posts
+future: true
+
+# Author settings
+author:
+  name: "Arulmurugan K"
+  bio: "Software Developer | C++ Specialist "
+  location: "India"
