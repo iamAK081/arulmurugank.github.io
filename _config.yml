@@ -1,72 +1,18 @@
-# Site Settings
-title: "Arulmurugan K's Tech Blog"
-author: "Arulmurugan K"
-email: "your-email@example.com"  # Replace with your email
-description: "C++ programming, Microsoft Graph API, and Windows development tutorials and guides"
+title: Arulmurugan K's Tech Blog
+author: Arulmurugan K
+email: your-email@example.com
+description: C++ Programming Blog
 baseurl: ""
 url: "https://arulmurugank.github.io"
+github_username: arulmurugank
 
-# Social Media
-twitter_username: your_twitter  # Replace with your Twitter handle
-github_username: arulmurugank    # Replace with your GitHub username
-
-# Build Settings
-markdown: kramdown
-highlighter: rouge
-
-# Theme Settings
-# Choose ONE of these themes by uncommenting your favorite:
-
-# Option 1: Cayman (Clean, professional - RECOMMENDED)
+# Theme
 theme: jekyll-theme-cayman
 
-# Option 2: Hacker (Dark theme)
-# theme: jekyll-theme-hacker
+# Build settings
+markdown: kramdown
 
-# Option 3: Midnight (Dark blue)
-# theme: jekyll-theme-midnight
-
-# Option 4: Minimal (Super simple)
-# theme: jekyll-theme-minimal
-
-# Option 5: Slate (Clean dark)
-# theme: jekyll-theme-slate
-
-# Option 6: Leap Day (Bold, colorful)
-# theme: jekyll-theme-leap-day
-
-# Option 7: Merlot (Elegant)
-# theme: jekyll-theme-merlot
-
-# Option 8: Modernist (Modern)
-# theme: jekyll-theme-modernist
-
-# Option 9: Tactile (Unique texture)
-# theme: jekyll-theme-tactile
-
-# Option 10: Architect (Technical look)
-# theme: jekyll-theme-architect
-
-# Plugins
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-
-# Author Information
-author:
-  name: "Arulmurugan K"
-  avatar: "https://github.com/arulmurugank.png"
-  bio: "Software Developer | C++ Specialist | Cloud Enthusiast"
-  location: "India"
-
-# Show future posts
-future: true
-
-# Pagination (if you add more posts later)
-paginate: 5
-paginate_path: "/page:num/"
-
-# Default Layout
+# Defaults
 defaults:
   -
     scope:
@@ -74,80 +20,3 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "Arulmurugan K"# Site Settings
-title: "Arulmurugan K's Tech Blog"
-author: "Arulmurugan K"
-email: "your-email@example.com"  # Replace with your email
-description: "C++ programming, Microsoft Graph API, and Windows development tutorials and guides"
-baseurl: ""
-url: "https://arulmurugank.github.io"
-
-# Social Media
-twitter_username: your_twitter  # Replace with your Twitter handle
-github_username: arulmurugank    # Replace with your GitHub username
-
-# Build Settings
-markdown: kramdown
-highlighter: rouge
-
-# Theme Settings
-# Choose ONE of these themes by uncommenting your favorite:
-
-# Option 1: Cayman (Clean, professional - RECOMMENDED)
-theme: jekyll-theme-cayman
-
-# Option 2: Hacker (Dark theme)
-# theme: jekyll-theme-hacker
-
-# Option 3: Midnight (Dark blue)
-# theme: jekyll-theme-midnight
-
-# Option 4: Minimal (Super simple)
-# theme: jekyll-theme-minimal
-
-# Option 5: Slate (Clean dark)
-# theme: jekyll-theme-slate
-
-# Option 6: Leap Day (Bold, colorful)
-# theme: jekyll-theme-leap-day
-
-# Option 7: Merlot (Elegant)
-# theme: jekyll-theme-merlot
-
-# Option 8: Modernist (Modern)
-# theme: jekyll-theme-modernist
-
-# Option 9: Tactile (Unique texture)
-# theme: jekyll-theme-tactile
-
-# Option 10: Architect (Technical look)
-# theme: jekyll-theme-architect
-
-# Plugins
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-
-# Author Information
-author:
-  name: "Arulmurugan K"
-  avatar: "https://github.com/arulmurugank.png"
-  bio: "Software Developer | C++ Specialist | Cloud Enthusiast"
-  location: "India"
-
-# Show future posts
-future: true
-
-# Pagination (if you add more posts later)
-paginate: 5
-paginate_path: "/page:num/"
-
-# Default Layout
-defaults:
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      author: "Arulmurugan K"
