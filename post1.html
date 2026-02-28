@@ -38,44 +38,23 @@
             border-bottom: 2px solid #3498db;
             padding-bottom: 10px;
         }
-        h3 {
-            color: #34495e;
-            margin: 20px 0 10px 0;
-        }
-        .code-block {
-            background: #1e1e1e;
-            color: #d4d4d4;
-            padding: 20px;
-            border-radius: 8px;
-            font-family: 'Courier New', monospace;
-            font-size: 14px;
-            overflow-x: auto;
-            margin: 20px 0;
-        }
         .btn {
             display: inline-block;
             background: #3498db;
             color: white;
-            padding: 12px 30px;
+            padding: 10px 25px;
             text-decoration: none;
             border-radius: 5px;
             margin: 10px 5px;
-            font-weight: bold;
-        }
-        .btn-download {
-            background: #27ae60;
-        }
-        .btn-github {
-            background: #34495e;
         }
         .btn:hover {
-            opacity: 0.9;
+            background: #2980b9;
         }
         .footer {
-            text-align: center;
-            padding: 30px;
             background: #34495e;
             color: white;
+            text-align: center;
+            padding: 30px;
             margin-top: 40px;
         }
         .back-link {
@@ -87,29 +66,13 @@
         .back-link:hover {
             text-decoration: underline;
         }
-        .info-box {
-            background: #e8f4f8;
-            border-left: 4px solid #3498db;
+        .copyright-box {
+            text-align: center;
+            margin-bottom: 30px;
             padding: 15px;
-            margin: 20px 0;
+            background: #f8f9fa;
             border-radius: 5px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
-        th {
-            background: #3498db;
-            color: white;
-        }
-        tr:nth-child(even) {
-            background: #f9f9f9;
+            border-left: 4px solid #3498db;
         }
     </style>
 </head>
@@ -121,88 +84,48 @@
     
     <div class="container">
         
-        <!-- Copyright Notice -->
-        <div style="text-align: center; margin-bottom: 30px;">
+        <!-- COPYRIGHT NOTICE -->
+        <div class="copyright-box">
             <p><strong>Copyright © 2024 Arulmurugan K. All Rights Reserved.</strong></p>
         </div>
         
-        <!-- Download Buttons -->
-        <div style="text-align: center; margin: 30px 0;">
-            <a href="#" class="btn btn-download">📥 Download Source Code</a>
-            <a href="#" class="btn btn-github">💻 View on GitHub</a>
-        </div>
-        
-        <!-- Overview -->
-        <h2>📋 Overview</h2>
+        <!-- INTRODUCTION -->
+        <h2>📋 Introduction</h2>
         <p>Microsoft Graph Email Sender is a powerful C++ application that enables seamless email sending with attachments through Microsoft Graph API. The application implements OAuth 2.0 authentication and intelligently handles files of all sizes - from tiny text files to large attachments up to 150MB.</p>
         
-        <!-- Features -->
-        <h2>✨ Features</h2>
-        <table>
-            <tr>
-                <th>Feature</th>
-                <th>Description</th>
-            </tr>
-            <tr>
-                <td>🔐 OAuth 2.0</td>
-                <td>Secure authentication with Azure AD</td>
-            </tr>
-            <tr>
-                <td>🔄 Auto Token Refresh</td>
-                <td>Never worry about expired tokens</td>
-            </tr>
-            <tr>
-                <td>📎 Smart Attachments</td>
-                <td>Files ≤3MB direct, >3MB chunked upload</td>
-            </tr>
-            <tr>
-                <td>📦 Multiple Files</td>
-                <td>Send unlimited attachments</td>
-            </tr>
-            <tr>
-                <td>🔧 VS 2008</td>
-                <td>Pure Win32 API, no dependencies</td>
-            </tr>
-        </table>
-        
-        <!-- Prerequisites -->
-        <h2>📋 Prerequisites</h2>
+        <!-- FEATURES -->
+        <h2>✨ Key Features</h2>
         <ul>
-            <li>Visual Studio 2008 or later</li>
-            <li>Windows SDK</li>
-            <li>Azure AD account with Mail.Send permission</li>
+            <li><strong>🔐 OAuth 2.0 Authentication</strong> - Secure client credentials flow with Azure AD</li>
+            <li><strong>🔄 Automatic Token Management</strong> - Token caching and auto-refresh</li>
+            <li><strong>📎 Smart Attachment Handling</strong> - Files ≤3MB direct upload, >3MB chunked upload</li>
+            <li><strong>📦 Multiple File Support</strong> - Send unlimited attachments per email</li>
+            <li><strong>🔧 Visual Studio 2008 Compatible</strong> - Pure Win32 API, no dependencies</li>
         </ul>
         
-        <!-- Quick Setup -->
-        <h2>🔧 Quick Setup</h2>
-        <ol>
-            <li>Register app in Azure AD</li>
-            <li>Add Mail.Send permission</li>
-            <li>Create client secret</li>
-            <li>Update credentials in main()</li>
-            <li>Build and run</li>
-        </ol>
+        <!-- CODE PREVIEW -->
+        <h2>📝 Source Code</h2>
+        <pre style="background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 8px; overflow-x: auto;">
+/*****************************************************************************
+* MICROSOFT GRAPH EMAIL SENDER
+* 
+* Copyright (c) 2024 Arulmurugan K
+* All Rights Reserved.
+*
+* Author: Arulmurugan K
+* Version: 1.0.2
+*****************************************************************************/
+
+#include &lt;windows.h&gt;
+#include &lt;winhttp.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+
+// ... (full source code available in repository)
+        </pre>
         
-        <!-- Code Preview -->
-        <h2>📝 Source Code Preview</h2>
-        <div class="code-block">
-/*****************************************************************************<br>
-* MICROSOFT GRAPH EMAIL SENDER<br>
-* Copyright (c) 2024 Arulmurugan K<br>
-* All Rights Reserved.<br>
-*****************************************************************************/<br><br>
-#include &lt;windows.h&gt;<br>
-#include &lt;winhttp.h&gt;<br>
-#include &lt;string&gt;<br>
-#include &lt;vector&gt;<br><br>
-// Full source code available for download
-        </div>
-        
-        <!-- License -->
-        <h2>📄 License</h2>
-        <p>MIT License - Copyright (c) 2024 Arulmurugan K</p>
-        
-        <!-- Back to Home -->
+        <!-- BACK TO HOME -->
         <div style="text-align: center; margin-top: 40px;">
             <a href="index.html" class="btn">← Back to Home</a>
         </div>
