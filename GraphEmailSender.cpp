@@ -725,15 +725,15 @@ int main()
     EmailSender sender(clientId, clientSecret, tenantId, userId);
     if (sender.SendEmail(to, subject, body, attachments))
     {
-        wprintf(L"✅ Email with multiple attachments sent successfully!\n");
+        wprintf(L" Email with multiple attachments sent successfully!\n");
     }
     else
     {
-        wprintf(L"❌ Failed to send email with attachments.\n");
+        wprintf(L" Failed to send email with attachments.\n");
         wprintf(L"   Please check your configuration and try again.\n");
     }
 
-    wprintf(L"\n📝 This software is provided under MIT License\n");
+    wprintf(L"\n This software is provided under MIT License\n");
     wprintf(L"   Copyright (c) 2024 Arulmurugan K. All rights reserved.\n");
     wprintf(L"   GitHub: https://github.com/arulmurugank/graph-email-sender\n\n");
 
