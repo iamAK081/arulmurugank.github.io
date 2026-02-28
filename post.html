@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Microsoft Graph Email Sender - Arulmurugan K</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 { color: #333; border-bottom: 2px solid #0066cc; padding-bottom: 10px; }
+        h2 { color: #0066cc; margin-top: 30px; }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 5px;
+        }
+        .badge {
+            display: inline-block;
+            background: #0066cc;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            margin: 2px;
+            font-size: 12px;
+        }
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        .btn {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 5px;
+        }
+        .btn-github {
+            background: #24292e;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background: #0066cc;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background: #f5f5f5;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #ddd;
+        }
+        .copyright {
+            font-size: 14px;
+            color: #888;
+            margin-top: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📧 Microsoft Graph Email Sender with OAuth 2.0</h1>
+        <p>
+            <span class="badge">Version 1.0.2</span>
+            <span class="badge">Windows</span>
+            <span class="badge">VS 2008</span>
+            <span class="badge">C++</span>
+        </p>
+        <p><strong>By Arulmurugan K</strong></p>
+        <p><em>Copyright © 2024 Arulmurugan K. All Rights Reserved.</em></p>
+        
+        <a href="https://github.com/arulmurugank/arulmurugank.github.io/raw/main/GraphEmailSender.cpp" class="btn">📥 Download Source Code</a>
+        <a href="https://github.com/arulmurugank/arulmurugank.github.io" class="btn btn-github">⭐ View on GitHub</a>
+        <a href="index.html" class="btn" style="background: #6c757d;">🏠 Back to Home</a>
+    </div>
+
+    <h2>📋 Overview</h2>
+    <p>Microsoft Graph Email Sender is a powerful C++ application that enables seamless email sending with attachments through Microsoft Graph API. The application implements OAuth 2.0 authentication and intelligently handles files of all sizes - from tiny text files to large attachments up to 150MB.</p>
+
+    <h2>✨ Features</h2>
+    <ul>
+        <li><strong>🔐 OAuth 2.0 Authentication</strong> - Secure client credentials flow with Azure AD</li>
+        <li><strong>🔄 Automatic Token Management</strong> - Token caching and auto-refresh</li>
+        <li><strong>📎 Smart Attachment Handling</strong> - Files ≤3MB direct upload, >3MB chunked upload</li>
+        <li><strong>📦 Multiple File Support</strong> - Send unlimited attachments per email</li>
+        <li><strong>🔧 Visual Studio 2008 Compatible</strong> - Pure Win32 API, no dependencies</li>
+        <li><strong>⚡ High Performance</strong> - Native code with efficient memory management</li>
+    </ul>
+
+    <h2>📋 Prerequisites</h2>
+    <table>
+        <tr>
+            <th>Requirement</th>
+            <th>Details</th>
+        </tr>
+        <tr>
+            <td>Visual Studio</td>
+            <td>2008 or later</td>
+        </tr>
+        <tr>
+            <td>Windows</td>
+            <td>XP/Vista/7/8/10/11</td>
+        </tr>
+        <tr>
+            <td>Libraries</td>
+            <td>WinHTTP.lib, Crypt32.lib</td>
+        </tr>
+        <tr>
+            <td>Azure Account</td>
+            <td>Required for OAuth 2.0</td>
+        </tr>
+    </table>
+
+    <h2>🔧 Azure AD Setup</h2>
+    <ol>
+        <li>Go to <a href="https://portal.azure.com">Azure Portal</a></li>
+        <li>Register an application</li>
+        <li>Add Mail.Send permission</li>
+        <li>Create client secret</li>
+        <li>Copy Client ID, Tenant ID, and Secret</li>
+    </ol>
+
+    <h2>📝 Source Code</h2>
+    <div class="code-block">
+/*****************************************************************************<br>
+* MICROSOFT GRAPH EMAIL SENDER<br>
+* Copyright (c) 2024 Arulmurugan K<br>
+* All Rights Reserved.<br>
+*<br>
+* Author: Arulmurugan K<br>
+* Version: 1.0.2<br>
+*****************************************************************************/<br><br>
+// Complete source code available on GitHub<br>
+// Click the download button above to get the full code
+    </div>
+
+    <h2>🚀 Usage Example</h2>
+    <div class="code-block">
+// Configure your credentials<br>
+std::wstring clientId = L"your-client-id";<br>
+std::wstring clientSecret = L"your-secret";<br>
+std::wstring tenantId = L"your-tenant-id";<br>
+std::wstring userId = L"your-email@company.com";<br><br>
+// Create sender and send email<br>
+EmailSender sender(clientId, clientSecret, tenantId, userId);<br>
+sender.SendEmail(L"recipient@example.com", <br>
+                 L"Test Subject", <br>
+                 L"Email body", <br>
+                 attachments);
+    </div>
+
+    <h2>📄 License</h2>
+    <p>MIT License - Copyright (c) 2024 Arulmurugan K</p>
+
+    <div class="copyright">
+        <p>Copyright © 2024 Arulmurugan K. All Rights Reserved.</p>
+        <p>Made with ❤️ in India</p>
+    </div>
+
+    <div class="footer">
+        <a href="index.html">← Back to Home</a>
+    </div>
+</body>
+</html>
