@@ -38,14 +38,15 @@
 </head>
 <body>
     <h1>👨‍💻 Arulmurugan K's Tech Blog</h1>
-    
-    <div class="post">
-        <h2>📧 Microsoft Graph Email Sender with OAuth 2.0</h2>
-        <p><strong>Published:</strong> February 28, 2024</p>
-        <p><strong>By:</strong> Arulmurugan K</p>
-        <p>A complete C++ implementation for sending emails with attachments via Microsoft Graph API. Features OAuth 2.0 authentication, smart file handling, and Visual Studio 2008 compatibility.</p>
-        <a href="post.html" class="btn">Read Full Article →</a>
-    </div>
+
+ {% for post in site.posts %}
+<div class="post">
+    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+    <p>{{ post.date | date: "%B %d, %Y" }} | By {{ post.author | default: site.author }}</p>
+    <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+    <a href="{{ post.url }}">Read More →</a>
+</div>
+{% endfor %}
     
     <div class="footer">
         <p>© 2024 Arulmurugan K. All Rights Reserved.</p>
