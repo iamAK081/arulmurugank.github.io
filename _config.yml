@@ -1,0 +1,13 @@
+title: Arulmurugan K's Tech Blog
+author: Arulmurugan K
+email: your-email@example.com
+description: C++ Programming Blog
+baseurl: ""
+url: "https://iamak081.github.io"
+github_username: iamAK081
+
+# Theme
+theme: jekyll-theme-cayman
+
+# Build settings
+markdown: kramdown
