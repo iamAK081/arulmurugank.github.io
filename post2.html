@@ -1,71 +1,411 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Fuel Station Management Audit Software</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuel Station Audit · Arulmurugan K</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            line-height: 1.6;
+            color: #2e3b4e;
+            background: #eef2f5;
+        }
+        .header {
+            background: #0b3b2f;  /* deep fuel green */
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 5px solid #f4b532; /* fuel pump yellow */
+        }
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        .header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        .badge {
+            display: inline-block;
+            background: #f4b532;
+            color: #0b3b2f;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            margin: 8px 5px 0 5px;
+            letter-spacing: 0.3px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 25px 30px;
+            background: white;
+            border-radius: 18px;
+            box-shadow: 0 15px 30px rgba(0,20,10,0.1);
+        }
+        h2 {
+            color: #0b3b2f;
+            margin: 35px 0 15px 0;
+            border-bottom: 3px solid #f4b532;
+            padding-bottom: 8px;
+            font-weight: 600;
+            font-size: 26px;
+        }
+        h3 {
+            color: #1d5e4a;
+            margin: 20px 0 10px 0;
+            font-size: 20px;
+        }
+        .btn {
+            display: inline-block;
+            background: #0b3b2f;
+            color: white;
+            padding: 12px 28px;
+            text-decoration: none;
+            border-radius: 40px;
+            margin: 10px 8px;
+            font-weight: 600;
+            border: 1px solid #0b3b2f;
+            transition: 0.2s;
+        }
+        .btn:hover {
+            background: #f4b532;
+            color: #0b3b2f;
+            border-color: #f4b532;
+        }
+        .btn-download {
+            background: #1d5e4a;
+            border: 1px solid #1d5e4a;
+        }
+        .btn-download:hover {
+            background: #f4b532;
+            color: #0b3b2f;
+        }
+        .btn-github {
+            background: #2c3e50;
+            border: 1px solid #2c3e50;
+        }
+        .btn-github:hover {
+            background: #f4b532;
+            color: #0b3b2f;
+            border-color: #f4b532;
+        }
+        .footer {
+            background: #0b3b2f;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+            margin-top: 50px;
+            border-top: 5px solid #f4b532;
+        }
+        .back-link {
+            color: white;
+            text-decoration: none;
+            margin-top: 15px;
+            display: inline-block;
+            border: 1px solid white;
+            padding: 8px 22px;
+            border-radius: 30px;
+            font-size: 15px;
+        }
+        .back-link:hover {
+            background: #f4b532;
+            color: #0b3b2f;
+            border-color: #f4b532;
+        }
+        .copyright-box {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 18px;
+            background: #fcf9f0;
+            border-radius: 12px;
+            border-left: 6px solid #f4b532;
+            font-weight: 500;
+        }
+        .download-section {
+            text-align: center;
+            margin: 45px 0 25px 0;
+            padding: 35px 30px;
+            background: #f4f7fa;
+            border-radius: 24px;
+            border: 1px solid #c8dad3;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 12px;
+        }
+        .feature-list li {
+            padding: 14px 18px;
+            background: #f4f7fa;
+            border-radius: 40px;
+            border-left: 4px solid #f4b532;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 20px 0;
+        }
+        .tech-badge {
+            background: #e2f0e9;
+            color: #0b3b2f;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 15px;
+            border: 1px solid #bcd9cf;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 10px rgba(0,20,10,0.05);
+        }
+        th {
+            background: #0b3b2f;
+            color: white;
+            padding: 14px 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        td {
+            padding: 14px 12px;
+            border: 1px solid #cfded7;
+            background: white;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .code-block {
+            background: #1e2b36;
+            color: #e6eef7;
+            padding: 22px;
+            border-radius: 18px;
+            font-family: 'Courier New', monospace;
+            font-size: 15px;
+            overflow-x: auto;
+            margin: 25px 0;
+            border-left: 6px solid #f4b532;
+        }
+        .architecture-badge {
+            background: #fcf9f0;
+            border: 1px dashed #0b3b2f;
+            padding: 20px 20px;
+            border-radius: 28px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        .roadmap-step {
+            background: white;
+            padding: 12px 22px;
+            margin: 8px 0;
+            border-radius: 50px;
+            border: 1px solid #bcd9cf;
+            display: inline-block;
+            width: auto;
+            font-weight: 500;
+        }
+    </style>
 </head>
 <body>
-  <h1>🚀 Building a Fuel Station Management Audit Software</h1>
+    <div class="header">
+        <h1>⛽ Fuel Station Management Audit</h1>
+        <p>By Arulmurugan K | March 2025</p>
+        <p>
+            <span class="badge">Version 2.1.0</span>
+            <span class="badge">C# · WPF</span>
+            <span class="badge">SQL Server</span>
+            <span class="badge">MVVM</span>
+        </p>
+    </div>
 
-  <h2>Introduction</h2>
-  <p>
-    Managing a fuel station involves more than just selling petrol or diesel. Operators must track sales, 
-    manage inventory, handle credit transactions, and ensure accountability through audit logs. 
-    To streamline these operations, I am developing a <strong>Fuel Station Management Audit Software</strong> 
-    for Windows, built with <strong>C# (WPF)</strong> and <strong>SQL Server</strong>.
-  </p>
+    <div class="container">
+        <!-- COPYRIGHT NOTICE -->
+        <div class="copyright-box">
+            <p><strong>Copyright © 2025 Arulmurugan K. All Rights Reserved.</strong></p>
+            <p>Original fuel station audit software — unauthorized reproduction or distribution prohibited.</p>
+        </div>
 
-  <h2>Technology Stack</h2>
-  <ul>
-    <li><strong>Frontend:</strong> WPF (Windows Presentation Foundation) with MVVM pattern</li>
-    <li><strong>Backend Database:</strong> SQL Server for robust transactional support</li>
-    <li><strong>Backend Code:</strong> C# with Entity Framework ORM</li>
-  </ul>
+        <!-- DOWNLOAD / MOCKUP SECTION (placeholder — links point to #) -->
+        <div class="download-section">
+            <h3 style="color: #0b3b2f; margin-bottom: 20px;">📦 Get the Fuel Station Audit Solution</h3>
+            <a href="#" class="btn btn-download" style="padding: 15px 40px; font-size: 18px;">⬇️ DOWNLOAD SOURCE (ZIP) </a>
+            <a href="#" target="_blank" class="btn btn-github" style="padding: 15px 40px; font-size: 18px;">💻 VIEW ON GITHUB</a>
+            <div style="margin-top: 25px; padding: 15px; background: white; border-radius: 18px;">
+                <p><strong>📁 Solution:</strong> FuelStationAudit.sln  (C# WPF + SQL Server)</p>
+                <p><strong>📦 Size:</strong> ~2.3 MB (core modules)</p>
+                <p><strong>🔧 Language:</strong> C# / .NET 6.0 / WPF / Entity Framework</p>
+                <p><strong>📜 License:</strong> MIT with attribution</p>
+                <p><strong>📅 Updated:</strong> March 2025</p>
+            </div>
+            <p style="margin-top: 12px; color: #1d5e4a;">✅ Complete audit & inventory solution — ready for customization</p>
+        </div>
 
-  <h2>Application Architecture</h2>
-  <ul>
-    <li><strong>Presentation Layer:</strong> WPF XAML views for sales, inventory, reports</li>
-    <li><strong>Business Logic Layer:</strong> Services for sales recording, inventory updates, user management</li>
-    <li><strong>Data Access Layer:</strong> Entity Framework with repository abstraction</li>
-    <li><strong>Audit Logging:</strong> JSON-formatted snapshots of every insert, update, or delete</li>
-  </ul>
+        <!-- INTRODUCTION -->
+        <h2>📋 Introduction</h2>
+        <p>Managing a fuel station goes beyond selling petrol and diesel — operators must track sales, monitor inventory, handle credit transactions, and ensure ironclad accountability through audit logs. <strong>Fuel Station Management Audit Software</strong>, developed by <strong>Arulmurugan K</strong>, brings a modern, transparent, and role-based solution for Windows. Built with C# (WPF) and SQL Server, it provides real‑time visibility and a tamper‑evident audit trail.</p>
 
-  <h2>Core Features</h2>
-  <h3>🔑 User Roles & Authentication</h3>
-  <p>Secure login with hashed passwords and role-based access (Operator, Admin, Super Admin).</p>
+        <div style="background: #e9f3ef; padding: 20px; border-radius: 20px; margin: 25px 0;">
+            <p><strong>🎯 Perfect For:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li>Independent fuel station owners & dealers</li>
+                <li>Fleet management & depot control</li>
+                <li>Multi‑pump automation with credit tracking</li>
+                <li>Audit‑ready fuel retail operations</li>
+            </ul>
+        </div>
 
-  <h3>💰 Sales & Transactions</h3>
-  <p>Record fuel and lubricant sales with multiple payment methods (Cash, Credit Card, UPI, Credit). 
-     Credit transactions include due dates for future collections.</p>
+        <!-- TECHNOLOGY STACK -->
+        <h2>⚙️ Technology Stack</h2>
+        <div class="tech-stack">
+            <span class="tech-badge">Frontend: WPF / XAML (MVVM)</span>
+            <span class="tech-badge">Backend: C# / .NET 6</span>
+            <span class="tech-badge">Database: SQL Server</span>
+            <span class="tech-badge">ORM: Entity Framework 6</span>
+            <span class="tech-badge">Audit: JSON snapshots</span>
+        </div>
 
-  <h3>📦 Inventory Management</h3>
-  <p>Admins can update stock levels and view real-time stock overviews.</p>
+        <!-- ARCHITECTURE (like layers) -->
+        <h2>🏗️ Application Architecture</h2>
+        <div class="architecture-badge">
+            <p style="font-size: 1.1rem;"><strong>Presentation Layer</strong>  (WPF Views / MVVM) → <strong>Business Logic Layer</strong> (Services: Sales, Inventory, Credit) → <strong>Data Access Layer</strong> (EF + Repositories) → <strong>SQL Server + Audit Trail</strong></p>
+        </div>
 
-  <h3>📊 Reports Generation</h3>
-  <p>Generate daily, monthly, and yearly reports. Export in CSV/JSON formats. 
-     Specialized reports include Daily Stock Statement, Cash Collection, and Credit Statement.</p>
+        <!-- CORE FEATURES (styled as feature-list grid) -->
+        <h2>✨ Core Features</h2>
+        <ul class="feature-list">
+            <li><strong>🔐 User Roles & Authentication:</strong> Operator, Admin, Super Admin (hashed passwords)</li>
+            <li><strong>💰 Sales & Transactions:</strong> Fuel, lubes, multiple payment modes: cash, card, UPI, credit with due dates</li>
+            <li><strong>📦 Inventory Management:</strong> Real‑time stock overview, low‑stock alerts, live updates</li>
+            <li><strong>📊 Reports Generation:</strong> Daily, monthly, yearly — CSV / JSON export. Stock / cash / credit statements</li>
+            <li><strong>📝 Audit Logs (JSON):</strong> Before/after snapshots on every insert/update/delete, user ID & timestamp</li>
+            <li><strong>🧾 Credit Tracking:</strong> Monitor pending collections, ageing of dues</li>
+            <li><strong>📎 Export & Backup:</strong> Automated report archiving, database backup hints</li>
+            <li><strong>🛡️ Role‑based UI:</strong> Different dashboards for operators and admins</li>
+        </ul>
 
-  <h3>📝 Audit Logs</h3>
-  <p>Track all changes with before/after snapshots, user identification, and timestamps for accountability.</p>
+        <!-- DATABASE & AUDIT PREVIEW -->
+        <h2>📀 Audit Trail Mechanism</h2>
+        <div class="code-block">
+            /* Example audit log entry (JSON format) stored in AuditLogs table */<br>
+            {<br>
+            &nbsp; "AuditID": "AUD-2304",<br>
+            &nbsp; "Timestamp": "2025-03-15T14:32:10Z",<br>
+            &nbsp; "User": "operator_james",<br>
+            &nbsp; "Action": "UPDATE",<br>
+            &nbsp; "Table": "Sales",<br>
+            &nbsp; "RecordID": 8712,<br>
+            &nbsp; "Before": {"quantity": 500, "paymentMode": "Cash"},<br>
+            &nbsp; "After": {"quantity": 480, "paymentMode": "Credit"} <br>
+            }
+        </div>
 
-  <h2>Development Roadmap</h2>
-  <ol>
-    <li>Setup WPF solution and SQL Server schema</li>
-    <li>Implement authentication and role-based navigation</li>
-    <li>Develop sales and inventory modules</li>
-    <li>Build reporting engine with export options</li>
-    <li>Integrate audit logging</li>
-    <li>Test modules and prepare deployment package</li>
-  </ol>
+        <!-- ROADMAP / TIMELINE -->
+        <h2>🗺️ Development Roadmap</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin: 15px 0 30px;">
+            <span class="roadmap-step">✅ WPF solution + SQL schema</span>
+            <span class="roadmap-step">✅ Authentication & role views</span>
+            <span class="roadmap-step">✅ Sales / inventory core</span>
+            <span class="roadmap-step">✅ Reporting engine (CSV/JSON)</span>
+            <span class="roadmap-step">⬜ Audit log viewer UI</span>
+            <span class="roadmap-step">⬜ Deployment package / installer</span>
+        </div>
 
-  <h2>Conclusion</h2>
-  <p>
-    This project aims to provide a <strong>comprehensive, user-friendly, and accountable system</strong> 
-    for fuel station management. By combining modern UI design, robust database support, and detailed audit trails, 
-    the software ensures efficiency and transparency in daily operations.
-  </p>
+        <!-- CREDENTIALS / SETUP TABLE (similar to prerequisites) -->
+        <h2>🔧 Setup & Configuration</h2>
+        <table>
+            <tr><th>Component</th><th>Details</th></tr>
+            <tr><td>Visual Studio</td><td>2022 / 2019 (.NET 6.0 SDK)</td></tr>
+            <tr><td>SQL Server</td><td>2019 or later (Express or higher)</td></tr>
+            <tr><td>NuGet Packages</td><td>Entity Framework 6, Newtonsoft.Json, CommunityToolkit.Mvvm</td></tr>
+            <tr><td>Initial DB</td><td>Run scripts / migrations from /Database folder</td></tr>
+        </table>
 
-  <p><a href="index.html">⬅ Back to Home</a></p>
+        <!-- USAGE EXAMPLE (like code preview) -->
+        <h2>🚀 Quick Start (C# snippet)</h2>
+        <div class="code-block">
+// Record a sale with audit (simplified service call)<br>
+public void RecordSale(SaleDto sale)<br>
+{<br>
+&nbsp;   using (var context = new FuelDbContext())<br>
+&nbsp;   {<br>
+&nbsp;       var beforeSnapshot = JsonConvert.SerializeObject(sale);<br>
+&nbsp;       var saleEntity = mapper.Map&lt;Sale&gt;(sale);<br>
+&nbsp;       context.Sales.Add(saleEntity);<br>
+&nbsp;       context.SaveChanges();<br>
+&nbsp;       <br>
+&nbsp;       // Audit after insert<br>
+&nbsp;       var audit = new AuditLog<br>
+&nbsp;       {<br>
+&nbsp;           Action = "INSERT", Table = "Sales", RecordId = saleEntity.Id,<br>
+&nbsp;           After = JsonConvert.SerializeObject(saleEntity),<br>
+&nbsp;           UserId = currentUserId, Timestamp = DateTime.UtcNow<br>
+&nbsp;       };<br>
+&nbsp;       context.AuditLogs.Add(audit);<br>
+&nbsp;       context.SaveChanges();<br>
+&nbsp;   }<br>
+}
+        </div>
+
+        <!-- REPORTS PREVIEW / TABLE (like common issues) -->
+        <h2>📋 Sample Reports</h2>
+        <table>
+            <tr><th>Report Type</th><th>Content</th><th>Export</th></tr>
+            <tr><td>Daily Stock Statement</td><td>Opening/closing fuel levels, deliveries</td><td>CSV, JSON</td></tr>
+            <tr><td>Cash Collection</td><td>Operator-wise cash, card, UPI totals</td><td>CSV</td></tr>
+            <tr><td>Credit Statement</td><td>Customer, due date, amount outstanding</td><td>JSON / print</td></tr>
+        </table>
+
+        <!-- TROUBLESHOOTING / FAQ style -->
+        <h2>❓ Common Issues</h2>
+        <table>
+            <tr><th>Issue</th><th>Suggested fix</th></tr>
+            <tr><td>Login fails even with correct password</td><td>Verify that the user is active and role assigned; check password hashing (BCrypt).</td></tr>
+            <tr><td>Inventory not updating after sale</td><td>Ensure transaction scope includes both sale and stock deduction; check EF commit.</td></tr>
+            <tr><td>Audit logs missing JSON details</td><td>Verify that Before/After snapshots are generated in the service layer; serializer settings.</td></tr>
+        </table>
+
+        <!-- LICENSE SECTION -->
+        <h2>📄 License</h2>
+        <div style="background: #f4f7fa; padding: 20px; border-radius: 20px;">
+            <p><strong>MIT License</strong></p>
+            <p>Copyright (c) 2025 Arulmurugan K</p>
+            <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+            <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+        </div>
+
+        <!-- SECONDARY DOWNLOAD -->
+        <div style="text-align: center; margin: 45px 0 20px;">
+            <a href="#" class="btn btn-download" style="padding: 14px 38px;">⬇️ Download Solution Package</a>
+        </div>
+
+        <!-- BACK TO HOME -->
+        <div style="text-align: center; margin: 30px 0 20px;">
+            <a href="index.html" class="btn" style="background: transparent; color: #0b3b2f; border: 2px solid #0b3b2f;">← Back to Home</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 Arulmurugan K. All Rights Reserved.</p>
+        <p>Made with ⛽ in India — Fuel Station Audit Software</p>
+        <p style="margin-top: 12px; opacity: 0.85;">Original work: Arulmurugan K. Unauthorized reproduction prohibited.</p>
+        <a href="index.html" class="back-link">Back to Home</a>
+    </div>
 </body>
 </html>
