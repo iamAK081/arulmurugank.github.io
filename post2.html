@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Fuel Station Management Audit Software</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🚀 Building a Fuel Station Management Audit Software</h1>
+
+  <h2>Introduction</h2>
+  <p>
+    Managing a fuel station involves more than just selling petrol or diesel. Operators must track sales, 
+    manage inventory, handle credit transactions, and ensure accountability through audit logs. 
+    To streamline these operations, I am developing a <strong>Fuel Station Management Audit Software</strong> 
+    for Windows, built with <strong>C# (WPF)</strong> and <strong>SQL Server</strong>.
+  </p>
+
+  <h2>Technology Stack</h2>
+  <ul>
+    <li><strong>Frontend:</strong> WPF (Windows Presentation Foundation) with MVVM pattern</li>
+    <li><strong>Backend Database:</strong> SQL Server for robust transactional support</li>
+    <li><strong>Backend Code:</strong> C# with Entity Framework ORM</li>
+  </ul>
+
+  <h2>Application Architecture</h2>
+  <ul>
+    <li><strong>Presentation Layer:</strong> WPF XAML views for sales, inventory, reports</li>
+    <li><strong>Business Logic Layer:</strong> Services for sales recording, inventory updates, user management</li>
+    <li><strong>Data Access Layer:</strong> Entity Framework with repository abstraction</li>
+    <li><strong>Audit Logging:</strong> JSON-formatted snapshots of every insert, update, or delete</li>
+  </ul>
+
+  <h2>Core Features</h2>
+  <h3>🔑 User Roles & Authentication</h3>
+  <p>Secure login with hashed passwords and role-based access (Operator, Admin, Super Admin).</p>
+
+  <h3>💰 Sales & Transactions</h3>
+  <p>Record fuel and lubricant sales with multiple payment methods (Cash, Credit Card, UPI, Credit). 
+     Credit transactions include due dates for future collections.</p>
+
+  <h3>📦 Inventory Management</h3>
+  <p>Admins can update stock levels and view real-time stock overviews.</p>
+
+  <h3>📊 Reports Generation</h3>
+  <p>Generate daily, monthly, and yearly reports. Export in CSV/JSON formats. 
+     Specialized reports include Daily Stock Statement, Cash Collection, and Credit Statement.</p>
+
+  <h3>📝 Audit Logs</h3>
+  <p>Track all changes with before/after snapshots, user identification, and timestamps for accountability.</p>
+
+  <h2>Development Roadmap</h2>
+  <ol>
+    <li>Setup WPF solution and SQL Server schema</li>
+    <li>Implement authentication and role-based navigation</li>
+    <li>Develop sales and inventory modules</li>
+    <li>Build reporting engine with export options</li>
+    <li>Integrate audit logging</li>
+    <li>Test modules and prepare deployment package</li>
+  </ol>
+
+  <h2>Conclusion</h2>
+  <p>
+    This project aims to provide a <strong>comprehensive, user-friendly, and accountable system</strong> 
+    for fuel station management. By combining modern UI design, robust database support, and detailed audit trails, 
+    the software ensures efficiency and transparency in daily operations.
+  </p>
+
+  <p><a href="index.html">⬅ Back to Home</a></p>
+</body>
+</html>
